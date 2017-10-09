@@ -8,6 +8,6 @@
     $userData = $_POST["user"];       
 
     // Calling save function in dbaccess
-    echo saveShareObject($userData);         
+    echo addShareObject($userData);         
 
 ?>
