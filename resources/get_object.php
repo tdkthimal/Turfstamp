@@ -1,22 +1,18 @@
 <?php
     
     // Get Share Object PHP
-
     require 'dbaccess.php';
     
-    // String objects
-    $userID = $_POST["userID"];
-    $title = $_POST["title"];
-    $cdn = $_POST["cdn"];
-    $lat = $_POST["lat"];
-    $long = $_POST["long"];
-    $alt = $_POST["alt"];
-    $datetime = $_POST["datetime"];
-    $areaID = $_POST["areaID"];
-    // End of String objects
-    $environmentalData = $_POST["environmentalData"];       //  This is a json object 
-    
-    // Calling save function in dbaccess
-    echo saveShareObject($title,$cdn,$userID,$lat,$long,$alt,$datetime,$areaID,$environmentalData);
-
+    $locationID = $_POST["locationID"];
+    if($locationID == ""){
+        // Send all shared objects ordered by hits
+        $data = getGlobalShareObjects();
+        // Send Shared Object JSON 
+        echo json_encode($data);    
+    }else{
+        // Send shared objects of the location ordered by hits
+        $data = getShareObjects($locationID);
+        // Send Shared Object JSON 
+        echo json_encode($data);   
+    }
 ?>
