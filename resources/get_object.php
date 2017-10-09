@@ -1,17 +1,19 @@
 <?php
     
     // Get Share Object PHP
-    require 'dbaccess.php';
-    
+    require 'object_dbaccess.php';
+
     $locationID = $_POST["locationID"];
     if($locationID == ""){
         // Send all shared objects ordered by hits
-        $data = getGlobalShareObjects();
+        // Array of Share Object JSONs should be returned
+        $data = getGlobalShareObjects();    
         // Send Shared Object JSON 
-        echo json_encode($data);    
+        echo json_encode($data);     
     }else{
         // Send shared objects of the location ordered by hits
-        $data = getShareObjects($locationID);
+        // Array of Share Object JSONs should be returned
+        $data = getShareObjects($locationID);   
         // Send Shared Object JSON 
         echo json_encode($data);   
     }

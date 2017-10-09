@@ -2,9 +2,10 @@
     
     // Save Share Object PHP
 
-    require 'dbaccess.php';
+    require 'object_dbaccess.php';
     
     // String objects
+    /*
     $userID = $_POST["userID"];
     $title = $_POST["title"];
     $cdn = $_POST["cdn"];
@@ -15,8 +16,10 @@
     $areaID = $_POST["areaID"];
     // End of String objects
     $environmentalData = $_POST["environmentalData"];       //  This is a json object 
-    
+    */
+    $shareObject = $_POST["shareObject"];       // Parse the JSON object
+
     // Calling save function in dbaccess
-    echo saveShareObject($title,$cdn,$userID,$lat,$long,$alt,$datetime,$areaID,$environmentalData);
+    echo saveShareObject($shareObject);         
 
 ?>
