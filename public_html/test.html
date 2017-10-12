@@ -1,0 +1,23 @@
+<html>
+    <h1>Test Page ftp sync on</h1>
+
+
+    <script>
+        
+        $.ajax({
+                url: "back/user_data.php",
+                method: "POST",
+                data: {r_type: 'save_equations', userID: userID, eqList: globalEqList},
+                dataType: "text",
+                success: function(data, status) {
+                    console.log("Save Equations: " + status);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    console.log("Equations save error.")
+                    console.log(XMLHttpRequest);
+                }    
+            });
+    </script>
+
+
+</html>

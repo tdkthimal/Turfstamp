@@ -20,6 +20,6 @@
     $shareObject = $_POST["shareObject"];       // Parse the JSON object
 
     // Calling save function in dbaccess
-    echo addShareObject($shareObject);         
+    echo addObject($shareObject);         
 
 ?>
